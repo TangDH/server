@@ -1,0 +1,32 @@
+# MySQL database shared with tomcat containers.
+db:
+  image: mysql:latest
+  environment:
+    MYSQL_ROOT_PASSWORD: root_pwd
+    MYSQL_DATABASE: hb_app
+    MYSQL_USER: hb_app_user
+    MYSQL_PASSWORD: hb_app_user_pwd
+  ports:
+    - "3306:3306"
+  volumes:
+    - "./db:/docker-entrypoint-initdb.d"
+
+# First node of the first Tomcat virtual host.
+app_node_1:
+  build: ./app
+  links:
+    - db
+  ports:
+    - "8080:8080"
+  environment:
+    - VIRTUAL_HOST=hb.aoiin.cn
+    - VIRTUAL_PORT=8080
+# nginx container that automatically creates a load balancer / reverse proxy across the 3 tomcat containers / 2 virtual hosts.
+nginx:
+  image: jwilder/nginx-proxy:latest
+  ports:
+    - "8888:80"
+  volumes:
+    - "/var/run/docker.sock:/tmp/docker.sock:ro"
+  links:
+    - app_node_1

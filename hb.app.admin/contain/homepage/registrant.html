@@ -1,0 +1,146 @@
+<link rel="stylesheet" href="css/homepage/registrant.css">
+
+<div class="banner-banner-box">
+    <div class="banner-banner z-depth-2 red lighten-2 valign-wrapper">
+        <div class="nav-wrapper valign valign-wrapper">
+            <!--<div class="col s1 valign-wrapper">-->
+            <!--<i class="material-icons small valign">edit_location</i>-->
+            <!--</div>-->
+            <div class="col s5">
+                <i class="material-icons">dashboard</i>
+                <b class="breadcrumb">业务管理</b>
+                <b class="breadcrumb">商标注册</b>
+            </div>
+            <!--<div class="col s6 valign">-->
+                <!--<form>-->
+                    <!--<div class="input-field">-->
+                        <!--<input id="search" type="search" required>-->
+                        <!--<label class="label-icon" for="search"><i class="material-icons left">search</i></label>-->
+                        <!--<i class="material-icons right">close</i>-->
+                    <!--</div>-->
+                <!--</form>-->
+            <!--</div>-->
+        </div>
+        <div class="fixed-action-btn horizontal">
+            <a href="" class="btn-floating btn-large waves-effect waves-light red {{topid?'lighten-1':'lighten-2'}} z-depth-3" ng-click="topid = !topid">
+                <i class="material-icons {{topid?'addtransform':''}}">add</i>
+            </a>
+            <!--<ul>-->
+            <!--<li><a class="btn-floating red lighten-1">aaa</a></li>-->
+            <!--<li><a class="btn-floating red lighten-1">bbb</a></li>-->
+            <!--<li><a class="btn-floating red lighten-1">ccc</a></li>-->
+            <!--</ul>-->
+        </div>
+    </div>
+</div>
+<div id="top" class="edit row red lighten-3 {{topid?'top':''}}">
+    <div class="tip">点击"+"新增注册信息</div>
+    <div class="banner-edit-box {{topid?'showit':''}}">
+        <form class="row offset-s1 valign-wrapper z-depth-1" action="#">
+            <!--<div class="edit-banner valign-wrapper"><i class="material-icons prefix valign">assignment</i>编辑面板</div>-->
+            <div class="col s5 offset-s1 valign">
+                <div class="row col s11" ng-repeat="input in editList">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">{{input.icon}}</i>
+                        <input id="{{input.id}}" type="text" class="validate" ng-blur="ifimg()" ng-focus="ifimage()" ng-model="$parent.editList[$index].model" required>
+                        <label for="{{input.id}}">{{input.title}}</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col s5 valign-wrapper valign">
+                <div ng-hide="editList[1].model" class="file-field input-field upimg col s12 valign-wrapper">
+                    <div>
+                        <span class="valign"><span>&#10753;&nbsp;</span>添加图片</span>
+                        <input ng-click="upload()" type="file">
+                    </div>
+                </div>
+                <div ng-show="editList[1].model" class="file-field input-field upimg col s12 valign-wrapper">
+                    <div>
+                        <span ng-show="imgupload == 0" class="valign"><span>&#8416;&nbsp;</span>已有网址</span>
+                        <img ng-if="imgupload == 1" class="responsive-img" ng-src="{{editList[1].model}}" alt="">
+                        <span ng-show="imgupload == 2" class="valign" style="font-size: 20px; line-height: 30px;">
+                            <span style="font-size: 25px;">&#8416;&nbsp;</span>图片网址错误，点击上传
+                        </span>
+                        <input ng-show="imgupload == 2" ng-click="upload()" type="file">
+                    </div>
+                </div>
+                <!--<a class="valign col s12" href="#">-->
+                    <!--<div class="material-icons">note_add</div>-->
+                <!--</a>-->
+            </div>
+            <div class="col">
+            </div>
+        </form>
+    </div>
+    
+</div>
+<div class="list">
+    <ul class="banner-list-box z-depth-1">
+        <li class="tit">
+            <div>
+                <span class="col s1 bord">完成</span>
+                <span class="col s2 bord">用户名</span>
+                <span class="col s3 bord">电话</span>
+                <span class="col s2 bord">商标名</span>
+                <span class="col s3 bord">商标分类</span>
+                <span class="col s1" >详细</span>
+            </div>
+        </li>
+        <!--没有数据时提示内容-->
+        <li ng-hide="bannerList.length">
+            <div class="row" style="background: #f3f3f3;">
+                <span class="col s12">没有数据啦</span>
+            </div>
+        </li>
+        <!--已经有的banner列表-->
+        <li ng-repeat="x in bannerList">
+            <!--单数行显示#f3f3f3, 双数行背景#f9f9f9-->
+            <div class="row"  ng-style="$index%2==0?{background: '#f9f9f9'}:{background: '#f3f3f3'}">
+                <!--是否完善了信息-->
+                <span class="col s1">
+                    <input type="checkbox" id={{x.registrant.phone}} ng-model="ifUp" />
+                    <label for={{x.registrant.phone}}></label>
+                </span>
+                <!--用户名-->
+                <span class="col s2">
+                    <div class="input-field col s12">
+                        {{x.registrant.name}}
+                    </div>
+                </span>
+                <!--用户电话-->
+                <span class="col s3">
+                    {{x.registrant.phone}}
+                    <!--<img class="responsive-img materialboxed" ng-src="{{x.imgUrl}}" alt="" />-->
+                </span>
+                <!--商标名-->
+                <span class="col s2">
+                    {{x.trademark}}
+                </span>
+                <!--<span class="col s2 input-field" ng-if="ifUp">-->
+                    <!--a-->
+                <!--</span>-->
+                <!--商标分类-->
+                <span class="col s3">
+                    【{{x.category.level2}}】分类下，共{{x.category.level3.length}}个小项
+                </span>
+                <!--详情-->
+                <span class="col s1" ng-click="bindSelect()" ui-sref="registrant.form">
+                    <a class="btn-floating btn waves-effect waves-light red lighten-2" >
+                        <i class="material-icons">edit</i>
+                    </a>
+                </span>
+            </div>
+        </li>
+    </ul>
+</div>
+<div class="infomask {{ifshow?'show':'hide'}}">
+    <div class="infocard row valign-wrapper" ui-view="">
+
+    </div>
+</div>
+<div class="bottom z-depth-2">
+
+</div>
+
+
+

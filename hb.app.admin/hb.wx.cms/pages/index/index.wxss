@@ -1,0 +1,71 @@
+/**index.wxss**/
+view.login text{
+    font-size: 2em;
+    font-weight: 900;
+    text-align: center;
+    display: block;
+}
+view.login .little {
+    font-weight: 200;
+    font-size: 0.7em;
+    /* color: #fcd300; */
+}
+form {
+    padding: 20px 0 40px;
+}
+input {
+    margin: 20px 0;
+    display: inline-block;
+    vertical-align: middle;
+}
+view.section {
+    border-bottom: 1px #ccc solid;
+    margin-bottom: 30px;
+}
+view.acc.section {
+    margin: 0;
+}
+.btnSearch {
+    position: relative;
+    border: solid #fcd300 1px;
+    border-radius: 25px;
+    background-color: #fcd300;
+    height: 50px;
+    color: #333;
+    font-family: 'PingFang-SC-Bold';
+    font-size: 18px;
+    overflow: hidden;
+    z-index: 11;
+    transition: all 0.5s cubic-bezier(0.5,0,0,1);
+}
+
+.wave {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: #fff;
+    border: none;
+    opacity: 0;
+}
+
+.button-hover .afterwave {
+    animation: click-wave 0.5s ease-out;
+}
+
+@keyframes click-wave {
+    0% {
+        width: 0;
+        height: 0;
+        border-radius: 0;
+        opacity: 0.7;
+    }
+
+    100% {
+        width: 250px;
+        height: 250px;
+        border-radius: 125px;
+        margin-left: -125px;
+        margin-top: -125px;
+        opacity: 0;
+    }
+}

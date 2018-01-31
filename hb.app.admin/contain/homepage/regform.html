@@ -1,0 +1,80 @@
+<form class="col s12">
+    <h4 class="col s12 center">用户信息完善</h4>
+    <div class="row">
+        <div class="input-field col s6">
+            <i class="material-icons prefix">account_circle</i>
+            <input placeholder="请填写姓名" id="name" type="text" class="validate">
+            <label for="name">姓名</label>
+        </div>
+        <div class="input-field col s3">
+            <!--<i class="material-icons prefix">info</i>-->
+            <select>
+                <option value="" disabled selected></option>
+                <option value="1">自然人</option>
+                <option value="2">个体工商户</option>
+                <option value="3">公司或其他组织</option>
+            </select>
+            <label>申请人类型</label>
+        </div>
+        <div class="input-field col s3">
+            <select>
+                <option value="" disabled selected></option>
+                <option value="1">普通注册</option>
+                <option value="2">加急注册</option>
+                <option value="3">注册+预审+担保</option>
+            </select>
+            <label>服务方式</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s6">
+            <i class="material-icons prefix">style</i>
+            <input placeholder="请填写商标名称" id="trademark" type="text" class="validate">
+            <label for="phone">商标名称</label>
+        </div>
+        <div class="input-field col s6">
+            <i class="material-icons prefix">phone</i>
+            <input placeholder="请填写电话" id="phone" type="tel" class="validate">
+            <label for="phone">电话</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12">
+            <i class="material-icons prefix">location_on</i>
+            <input id="address" placeholder="请填写地址" type="text" class="validate">
+            <label for="address">用户地址</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s6" id="olevel1" >
+            <i class="material-icons prefix">looks_one</i>
+            <div class="select-wrapper"></div>
+            <select>
+                <option value="" disabled selected></option>
+                <option ng-repeat="x in level1" value="{{x.id}}">{{x.name}}</option>
+            </select>
+            <label>一级分类</label>
+        </div>
+        <div class="input-field col s6" id="olevel2" >
+            <i class="material-icons prefix">looks_two</i>
+            <select>
+                <!--<option ng-repeat="x in level2" value="{{x.id}}">{{x.name}}</option>-->
+            </select>
+            <label>二级分类</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12" id="olevel3">
+            <i class="material-icons prefix">looks_3</i>
+            <select multiple>
+                <option value="" disabled selected></option>
+                <option ng-repeat="x in level1">{{x.name}}</option>
+            </select>
+            <label>服务小项</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="btn col s5 red lighten-2" ng-click="closeinfo()">取消编辑</div>
+        <div class="btn col s5 offset-s2" ng-click="updateInfo()">保存信息</div>
+    </div>
+</form>

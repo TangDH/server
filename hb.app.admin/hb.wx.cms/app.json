@@ -1,0 +1,36 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/search/search",
+        "pages/logs/logs",
+        "pages/editinfo/editinfo"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "backgroundColor": "#fcd300",
+        "navigationBarBackgroundColor": "#fcd300",
+        "navigationBarTitleText": "华标后台管理工具",
+        "navigationBarTextStyle": "black"
+    },
+    "networkTimeout": {
+        "request": 10000,
+        "downloadFile": 10000
+    },
+    "tabBar": {
+        "list": [
+            {
+                "pagePath": "pages/editinfo/editinfo",
+                "iconPath": "/img/list.png",
+                "selectedIconPath": "/img/list_after.png",
+                "text": "订单管理"
+            },
+            {
+                "pagePath": "pages/search/search",
+                "iconPath": "/img/search.png",
+                "selectedIconPath": "/img/search_after.png",
+                "text": "商标查询"
+            }
+        ],
+        "selectedColor": "#fcd300"
+    }
+}

@@ -1,0 +1,22 @@
+{
+  "class": {
+    "outul": ["collapsible", "collapsible-accordion"],
+    "outli": ["bold"],
+    "outa": ["collapsible-header", "waves-effect", "waves-l"],
+    "outdiv": ["collapsible-body"],
+    "inli": ["waves-effect", "waves-l"]
+  },
+  "tabsArr":[
+    {
+      "icon": "home",
+      "name": "业务管理",
+      "src": "home",
+      "contain": [
+        {
+          "title": "商标注册",
+          "src": "registrant"
+        }
+      ]
+    }
+  ]
+}

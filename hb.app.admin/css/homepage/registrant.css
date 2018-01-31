@@ -1,0 +1,336 @@
+div.edit {
+    position: relative;
+    padding-top: 169px;
+    height: 320px;
+    text-align: center;
+    margin-bottom: -89px;
+    transition: all 0.5s cubic-bezier(1,0,0.5,1);
+    /*background-color: rgba(238, 110, 115, 0.7);*/
+}
+.tip {
+    color: rgba(255,255,255,0.5);
+    height: 80px;
+    margin-bottom: -80px;
+    line-height: 60px;
+    padding: 20px 0 0 0;
+    font-weight: 100;
+    font-size: 20px;
+}
+.banner-banner-box {
+    position: absolute;
+    /*position: fixed;*/
+    padding-left: 300px;
+    top: 0;
+    left: 0;
+    height: 169px;
+    z-index: 10;
+    width: 100%;
+}
+.banner-banner {
+    position: relative;
+    height: 169px;
+    background-color: rgba(238, 110, 115, 1);
+    top:0;
+    left:0;
+    padding-top: 50px;
+    width: 100%;
+}
+.banner-banner div.nav-wrapper {
+    background-color: rgba(0,0,0,0);
+    padding-left: 2%;
+    width: 100%;
+}
+.banner-banner div.nav-wrapper div.s5 {
+    height: 100px;
+    float: left;
+    margin-left: 0;
+}
+.banner-banner div.nav-wrapper div.s6 {
+    height: 50px;
+    position: relative;
+    line-height: 50px;
+}
+.banner-banner div.nav-wrapper div.s5 b {
+    display: inline-block;
+    height: 100px;
+    line-height: 100px;
+    font-size: 20px;
+    font-weight: 100;
+    float: left;
+}
+.banner-banner div.nav-wrapper div.s5 i {
+    height: 100px;
+    line-height: 100px;
+    font-size: 30px;
+    font-weight: 100;
+    color: #fff;
+    float: left;
+}
+.banner-banner div.fixed-action-btn {
+    position: absolute;
+    width: 56px;
+    bottom: -28px;
+    /*margin-left: -28px;*/
+    /*left: 50%;*/
+    margin-right: 28px;
+    right: 3%;
+    transition: all 0.5s;
+}
+.banner-banner div.fixed-action-btn.mid {
+    right: 50%;
+    margin-right: -14px;
+}
+.banner-banner div ul {
+    position: absolute;
+}
+.banner-banner .fixed-action-btn a {
+    transition: all 1s cubic-bezier(1,0,0.5,1);
+}
+.banner-banner .fixed-action-btn a i {
+    /*background-color: #b61827;*/
+    transition: all 0.7s cubic-bezier(1,0,0.5,1);
+}
+.banner-banner .fixed-action-btn a i.addtransform {
+    transform: rotate(135deg);
+}
+.banner-banner .fixed-action-btn ul {
+    left: 64px;
+    padding-left: 20px;
+    right: auto;
+    text-align: left;
+}
+.banner-banner .fixed-action-btn ul li {
+    margin: 10px 0 0 30px;
+    text-align: center;
+}
+.banner-edit-box {
+    height: 410px;
+    transition: all 0.5s cubic-bezier(1,0,0.5,1);
+    opacity: 0;
+}
+div.showit {
+    opacity: 1;
+}
+div.edit.top {
+    height: 650px;
+}
+form.row {
+    height: 390px;
+    width: 96%;
+    margin: 0 auto;
+    background-color: whitesmoke;
+}
+/*.edit>form.row>.edit-banner {*/
+    /*height: 70px;*/
+    /*line-height: 70px;*/
+    /*padding-left: 30px;*/
+    /*color: #fff;*/
+    /*font-size: 20px;*/
+    /*width: 100%;*/
+    /*margin-bottom: 80px;*/
+    /*background-color: rgba(238, 110, 115, 0.75);*/
+/*}*/
+/*.edit>form.row>.edit-banner>i {*/
+    /*margin-right: 10px;*/
+/*}*/
+form.row>div.offset-s1 {
+    height:261px;
+}
+form.row>div.offset-s1.s6 {
+    height: 80px;
+}
+form.row>div.valign-wrapper>.upimg {
+    height: 240px;
+    border: 2px rgba(0,0,0,0.5) solid;
+    /*border: 3px rgba(255,255,255,0.7) solid;*/
+    /*border: 2px rgba(0,0,0,0.5) solid;*/
+    background-color: #eee;
+    border-radius: 5px;
+    transition: all 0.3s;
+    overflow: hidden;
+}
+form.row>div.valign-wrapper>.upimg>div {
+    width: 100%;
+}
+form.row>div.valign-wrapper>.upimg>div>span {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    font-weight: normal;
+    color: rgba(0,0,0,0.5);
+    /*color: rgba(255,255,255,0.7);*/
+    transition: all 0.3s;
+}
+form.row>div.valign-wrapper>.upimg>div>span>span {
+    font-size: 37px;
+}
+form.row>div.valign-wrapper>.upimg:hover {
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+form.row>div.valign-wrapper>.upimg:hover>div>span {
+    /*color: rgba(255,255,255,1);*/
+    color: rgba(0,0,0,0.7);
+}
+/*
+.edit>form.row>div.valign-wrapper>.upimg:hover>div>img {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 300;
+}
+*/
+form.row>div.col.s5.offset-s1>div.row>div.input-field>i {
+    color: rgba(0,0,0,0.5);
+    /*color: rgba(255,255,255,0.7);*/
+}
+form.row>div.col.s5.offset-s1>div.row>div.input-field>i.active {
+    /*color: rgba(255,255,255,1);*/
+    color: rgba(0,0,0,0.7);
+}
+form.row>div.col.s5.offset-s1>div.row>div.input-field>input {
+    /*border-bottom: 2px solid rgba(255,255,255,0.7);*/
+    /*color: rgba(255,255,255,0.7);*/
+    border-bottom: 2px solid rgba(0,0,0,0.5);
+    color: rgba(0,0,0,0.5);
+}
+form.row>div.col.s5.offset-s1>div.row>div.input-field>input:focus {
+    border-bottom: 2px solid rgba(0,0,0,0.7);
+    /*color: rgba(255,255,255,1);*/
+    color: rgba(0,0,0,0.7);
+    box-shadow: none;
+}
+form.row>div.col.s5.offset-s1>div.row>div.input-field>input.ng-not-empty {
+    border-bottom: 2px solid rgba(0,0,0,0.7);
+    /*color: rgba(255,255,255,1);*/
+    color: rgba(0,0,0,0.7);
+    box-shadow: none;
+}
+form.row>div.col.s5.offset-s1>div.row>div.input-field>label {
+    color: rgba(0,0,0,0.5);
+    /*color: rgba(255,255,255,0.7);*/
+}
+form.row>div.col.s5.offset-s1>div.row>div.input-field>label.active {
+    /*color: rgba(255,255,255,1);*/
+    color: rgba(0,0,0,0.7);
+}
+form.row>div.col.s5.valign-wrapper {
+    margin-left: 0;
+}
+.banner-list-box {
+    position: relative;
+    width: 96%;
+    margin: 20px auto;
+    /*box-shadow: 0 0 20px rgba(0,0,0,.2);*/
+    overflow: hidden;
+}
+.banner-list-box li.tit {
+    height: 70px;
+    margin: 0 auto;
+    background-color: #eee;
+    /*border-bottom: 3px rgba(238, 110, 115, 0.9) solid;*/
+    border-bottom: 2px rgba(0,0,0,0.2) solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-size: 16px;
+    color: #666;
+    font-weight: 900;
+}
+.tit .bord {
+    border-right: 2px #ccc solid;
+}
+.banner-list-box div.row {
+    margin: 0 auto;
+    padding: 5px 0;
+    border-bottom: 1px #eee solid;
+}
+.banner-list-box div.row>span {
+    display: flex;
+    flex-direction: column;
+    height: 140px;
+    margin: 10px 0;
+    text-align: center;
+    overflow: hidden;
+    justify-content: center;
+    color: #666;
+}
+.input-field {
+    margin-top: 0;
+}
+.input-field a {
+    color: rgba(238, 110, 115, 0.9);
+    text-decoration: underline;
+}
+span.input-field {
+    padding: 0;
+}
+.input-field.inputnum input {
+    text-align: center;
+    width: 90%;
+    transition: margin 0.2s;
+}
+.input-field.inputnum label {
+    text-align: center;
+    width: 90%;
+    left: 0;
+}
+[type="checkbox"]+label:before {
+    left: 50%;
+    margin-left: -9px;
+}
+[type="checkbox"]:checked+label:before {
+    left: 50%;
+    margin-left: -14px;
+}
+.banner-list-box li .material-placeholder {
+    display: flex;
+    flex-direction: column;
+    height: 140px;
+    justify-content: center;
+}
+.banner-list-box li .s1 a.btn-floating {
+    margin: auto;
+}
+.bottom {
+    margin-top: 20px;
+    height: 100px;
+    background-color: rgba(238, 110, 115, 0.9);
+}
+div.infomask {
+    position: fixed;
+    overflow-y: scroll;
+    background: rgba(0,0,0,0.5);
+    z-index: 998;
+    height:100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+div.infomask.show {
+    display: block;
+}
+div.infomask.hide {
+    display: none;
+}
+div.infocard {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -250px 0 0 -200px;
+    z-index:99999;
+    width: 700px;
+    padding: 40px;
+    background: #eee;
+}
+div.infocard h4 {
+    margin-bottom: 50px;
+}
+div.infocard form label{
+    display: inline;
+    vertical-align: text-bottom;
+}
+div.infocard .btn {
+    height: 50px;
+    line-height: 50px;
+}

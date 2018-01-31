@@ -1,0 +1,4 @@
+rootProject.name = 'hb.app'
+include 'hb.app.api'
+include 'hb.app.provider'
+

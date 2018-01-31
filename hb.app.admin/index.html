@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>ai.cms</title>
+    <link rel="stylesheet" href="bower_components/materialize/dist/css/materialize.min.css"/>
+    <link rel="stylesheet" href="bower_components/materialize/dist/font/icon.css"/>
+
+    <link rel="stylesheet" href="css/index.css"/>
+</head>
+
+<body>
+    <!--声明 angular app "cms_index" 作用于此div-->
+    <div ng-app="cms_index" class="row">
+        <!--定义窗口过小时的MENU符号-->
+        <a href="#" data-activates="nav-mobile" class="button-collapse top-nav waves-effect waves-light circle hide-on-large-only">
+            <i class="material-icons">
+                menu
+            </i>
+        </a>
+        <!--定义侧边banner-->
+        <ul id="nav-mobile" class="side-nav fixed z-depth-4">
+            <!--LOGO-->
+            <li class="logo"><h2>VIVi<span>.</span></h2></li>
+            <!--搜索框-->
+            <li class="search">
+                <div class="search-wrapper card">
+                    <input id="search" />
+                    <i class="material-icons">search</i>
+                    <div class="search-results"></div>
+                </div>
+            </li>
+            <!--侧边栏-->
+            <li class="no-padding" ng-controller="tab">
+                <!--tab栏-->
+                <ul ng-class="class.outul">
+                    <li ng-repeat="i in tabsArr" ng-class="class.outli">
+                        <!--大标签名称-->
+                        <a ng-class="class.outa" href="javascript:void (0);">
+                            <!--<i class="material-icons">{{i.icon}}</i>-->
+                            {{i.name}}
+                            <span class="material-icons tiny">label_outline</span>
+                        </a>
+                        <div ng-class="class.outdiv">
+                            <ul>
+                                <li ng-class="class.inli" ng-repeat="j in i.contain" ng-click="action">
+                                    <!--小标签名称-->
+                                    <a ui-sref="{{j.src}}" class="">{{j.title}}</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <!--开场动画-->
+        <!--<div id="mask" class="valign-wrapper">-->
+            <!--<span style="animation-duration: 2.2s;">VIVi.CMS</span>-->
+            <!--<span style="animation-name: showdown; color: rgba(255,255,255,0.3); font-size: 1000px; margin-top: -500px; margin-left: -200px; animation-delay: 0.1s;">VIVi.CMS</span>-->
+        <!--</div>-->
+        <!--后台顶部banner栏-->
+        <div class="banner z-depth-3">
+            <a class="valign-wrapper" href="javascript:void (0);">
+                <i class="material-icons small valign center-align">perm_identity</i>
+            </a>
+        </div>
+
+        <!--路由-->
+        <div class="contain" ui-view=""></div>
+
+        <!--angular-->
+        <script src="bower_components/angular/angular.min.js"></script>
+        <!--angular路由-->
+        <!--<script src="bower_components/angular-route/angular-route.min.js"></script>-->
+        <!--angular深层路由-->
+        <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+        <!--angular动画-->
+        <!--<script src="bower_components/angular-animate/angular-animate.min.js"></script>-->
+        <!--七牛上传sdk依赖-->
+        <!--<script src="bower_components/plupload/js/plupload.full.min.js"></script>-->
+        <!--七牛上传sdk-->
+        <!--<script src="bower_components/qiniu/dist/qiniu.min.js"></script>-->
+
+        <!--jquery-->
+        <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+        <!--materialize-->
+        <script src="bower_components/materialize/dist/js/materialize.js"></script>
+
+        <!--token生成函数-->
+        <!--<script src="js/token.js"></script>-->
+        <!--app的配置js-->
+        <script src="js/index.js"></script>
+        <!--自定义配置-->
+        <script>
+            $(document).ready(function(){
+                $("#search").focus(function(){
+                    $("#nav-mobile>.search>div").css({
+                        "margin":"0"
+                    });
+                });
+                $("#search").blur(function(){
+                    $("#nav-mobile>.search>div").css({
+                        "margin":"0 12px"
+                    });
+                });
+
+                // 初始化input标签
+                Materialize.updateTextFields();
+                // 开始表演
+                setTimeout(function(){
+                    $("#mask").css({
+                        "left": "-2000px",
+                        "opacity": "0"
+                    });
+                    $(".no-padding>ul>li:first>a").addClass("active");
+                    // 初始化侧边栏
+                    $('.collapsible').collapsible();
+                    $(".button-collapse").sideNav({
+                        menuWidth: 300, // Default is 240
+                        closeOnClick: false, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+                        draggable: true // Choose whether you can drag to open on touch screens
+                    });
+                    $('select').material_select();
+                    // 删除mask
+                    setTimeout(function(){
+                        $("#mask").remove();
+                    },500);
+                },1900);
+            });
+        </script>
+
+    </div>
+</body>
+</html>

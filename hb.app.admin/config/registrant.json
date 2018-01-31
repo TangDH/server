@@ -1,0 +1,39 @@
+{
+  "editList": [
+    {
+      "title": "标签",
+      "icon": "turned_in",
+      "id": "label",
+      "model": ""
+    },
+    {
+      "title": "图片地址",
+      "icon": "http",
+      "id": "img",
+      "model": ""
+    },
+    {
+      "title": "跳转地址",
+      "icon": "open_in_new",
+      "id": "bvalue",
+      "model": ""
+    }
+  ],
+  "bannerList": [
+    {
+      "registrant":{
+        "name":"许浩",
+        "phone":"11122223333",
+        "address":"上海市闵行区城开中心",
+        "regtype":"1"
+      },
+      "trademark": "海飞丝",
+      "category":{
+        "level1":"3",
+        "level2":"0301",
+        "level3":["030008","030034","030026"]
+      },
+      "type":"1"
+    }
+  ]
+}

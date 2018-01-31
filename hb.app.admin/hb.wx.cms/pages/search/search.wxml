@@ -1,0 +1,50 @@
+<!--index.wxml-->
+<view class="container">
+    <form bindsubmit="formSubmit" style='width:100%; top:{{formTop}}%; height:{{100-formTop}}%;'>
+        <view class="wrap">
+            <!-- 商标名输入框 -->
+            <view class="brandName">
+                <view class='brandNameInput input {{bncf}} {{down}}'>
+                    <input bindfocus="bfouse" focus="{{bfoc}}" bindinput="bni" bindblur='bbon' name="brandName" placeholder="" bindinput='changeBvalue' value='{{bvalue}}' placeholder-class="brandNameInputStyle" />
+                </view>
+
+                <!-- bindblur='bblur' -->
+                <view class="bnh {{bnc}}">请输入商标名</view>
+                <view class='clearbox {{down}}' bindtap='clearb'>
+                    <view class='ncclear {{bncf}}'>+</view>
+                </view>
+                <view class='finishbox {{down}}' bindtap='bblur'>
+                    <view class='finish {{bncf}}'>完成</view>
+                </view>
+            </view>
+            <button type='default' hover-stay-time='500' form-type='submit' class="btnSearch" style='transform:translateY({{buttonloc+40}}px)'>
+                <view class="wave afterwave"></view> 查询
+            </button>
+            <view class='history' style='height:200px; opacity:{{ifhis}}; top:{{historyTop}}px;'>
+                <view class='cb'>
+                    <view class='title'>
+                        <text>历史纪录</text>
+                        <image src="/img/delete.png" bindtap='deletehis'></image>
+                    </view>
+                    <view wx:for="{{historyArr}}" data-classification="{{item}}" class='tab {{ani}}' bindtap='taptab' style='transform:translateY({{index*50}}px);'>
+                        {{item}}
+                    </view>
+                </view>
+                <view class='cb'>
+                    <view class='title'>
+                        <text>推荐搜索</text>
+                        <image src="{{eye}}" bindtap='hidefa'></image>
+                    </view>
+                    <view wx:for="{{suggestArr}}" data-classification="{{item}}" class='tab {{ani}}' bindtap='taptab' style='transform:translateY({{index*50}}px); display:{{suggestshow}};'>
+                        {{item}}
+                    </view>
+                    <view class='tip' style='display:{{tipshow}}'>推荐搜索已隐藏</view>
+                </view>
+            </view>
+            <scroll-view class='suggest' style='height:{{pheight-45}}px;'>
+
+            </scroll-view>
+        </view>
+    </form>
+    <view class='bg'></view>
+</view>

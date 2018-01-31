@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: cruncher
+  datasource:
+    url: jdbc:mysql://db:3306/hb_app
+    username: root
+    password: root_pwd
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update

@@ -1,0 +1,22 @@
+
+subprojects {
+    group 'com.huabiao'
+    version '1.0-SNAPSHOT'
+    apply plugin: 'java'
+
+
+    ext {
+        springVersion = '3.2.11.RELEASE'
+        springBootVersion = '1.5.4.RELEASE'
+    }
+
+    buildscript {
+        repositories {
+            mavenCentral()
+        }
+        dependencies {
+
+        }
+    }
+
+}

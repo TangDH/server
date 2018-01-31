@@ -1,0 +1,18 @@
+<!--index.wxml-->
+<view class="container">
+    <view class='login'>
+        <text>华 标</text>
+        <text class='little'>寻找商标的价值</text>
+    </view>
+    <form bindsubmit="formSubmit" bindreset="formReset">
+        <view class="section acc">
+            账号：<input name="phone" placeholder="请输入手机号" type="number" auto-focus/>
+        </view>
+        <view class="section">
+            密码：<input name="pwd" placeholder="请输入密码" password/>
+        </view>
+        <button hover-stay-time='500' form-type='submit' class="btnSearch" style='margin-top:{{buttonloc+40}}px'>
+                <view class="wave afterwave"></view> 立即登录
+            </button>
+    </form>
+</view>
