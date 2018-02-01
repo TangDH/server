@@ -1,4 +1,4 @@
-rootProject.name = 'hb.app'
-include 'hb.app.api'
-include 'hb.app.provider'
+rootProject.name = 'op.app'
+include 'op.app.api'
+include 'op.app.provider'
 
